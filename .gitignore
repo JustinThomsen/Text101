@@ -1,4 +1,7 @@
-/[Ll]ibrary/
+**/[Ll]ibrary/
+**/Assets/Standard Assets/
+**/Assets/Editor/
+**/ProjectSettings/
 /[Tt]emp/
 /[Oo]bj/
 /[Bb]uild/
