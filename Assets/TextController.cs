@@ -1,6 +1,13 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System;
 using System.Collections;
+
+public interface State {
+
+	String printOptions();
+	State handleInput(KeyCode code);
+}
 
 public class TextController : MonoBehaviour {
 
@@ -13,6 +20,7 @@ public class TextController : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void Update () {
+
 		if (myState == States.start) {
 			state_start();
 		} else if (myState == States.escape) {
@@ -39,18 +47,19 @@ public class TextController : MonoBehaviour {
 			state_taint();
 		}
 	}
-	void state_escape() {
+	States state_escape() {
 		text.text = "What would you like to do? \n\nPress \"A\" to give your meth-head cellmate all the meth. \nPress \"B\" to shank yourself and call for help.  " +
 			"\nPress \"C\" to hang yourself with your towel.";
 		if (Input.GetKeyDown (KeyCode.A)){
-			myState = States.meth;
+			return States.meth;
 		}
 		if (Input.GetKeyDown (KeyCode.B)){
-			myState = States.shankSelf;
+			return States.shankSelf;
 		}
 		if (Input.GetKeyDown (KeyCode.C)){
-			myState = States.hang;
+			return States.hang;
 		}
+		return States.escape;
 	}
 	void state_live() {
 		text.text = "You go through the motions, serve your prison sentence and are released on good behavior.  You are not a useful member of society anymore.  Good job breaking the law."+
@@ -109,16 +118,19 @@ public class TextController : MonoBehaviour {
 			Start ();
 		}
 	}
-	void state_start() {
+	States state_start() {
 		text.text = "Welcome to federal pound me in the ass prison.  You can either try to escape, or safely live out your days as " +
 					"an upstanding federal prisoner. You have in your possession a prison shank, a towel and a bunch of meth. \n\n" +
 					"Press \"E\" try to escape.\nPress \"L\" to live out your sentence.";
 
 		if (Input.GetKeyDown (KeyCode.E)){
-			myState = States.escape;
-		} else if (Input.GetKeyDown (KeyCode.L)){
-			myState = States.live;
+			return States.escape;
 		}
+		if (Input.GetKeyDown (KeyCode.L)) {
+			return States.live;
+		} 
+		else
+			return States.start;
 	}
 	void state_meth() {
 		text.text = "Your meth-head cellmate starts tweaking hardcore and tries to steal your prison shank.  Do you: \n\nA) Stab him in the throat "+
