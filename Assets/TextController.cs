@@ -20,7 +20,6 @@ public class TextController : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void Update () {
-
 		if (myState == States.start) {
 			state_start();
 		} else if (myState == States.escape) {
