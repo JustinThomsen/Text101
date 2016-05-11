@@ -39,23 +39,24 @@ namespace Thomsen.FPMITAPrison
 		[Test()]
 		public void shouldStayInStartOnButtonPressAnyOther ()
 		{
-			StateStart stateStart = new StateStart();
+			StateStart stateStart = new StateStart ();
 			
 			var state = stateStart.handleInput (KeyCode.Z);
 			
 			Assert.IsInstanceOf<StateStart> (state);
-		}[Test()]
+		}
+	/*	[Test()]
 		public void shouldStayInStartOnNoButtonPress()
 		{
 			StateStart stateStart = new StateStart();
-			
+			//KeyCode can't be null
 			//I dont think we need to do this- we can just assert the way it is
 			//What this is saying is that the action is actually no action
 			//I cant think of how else to do this.
-			//var state = stateStart.handleInput(null);
+			var state = stateStart.handleInput(null);
 			
-			Assert.IsInstanceOf<StateStart> (null);
-		}
+			Assert.IsInstanceOf<StateStart> (start);
+		}*/
 	}
 }
 

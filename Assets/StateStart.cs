@@ -31,10 +31,8 @@ namespace Thomsen.FPMITAPrison
 			if (code == KeyCode.L) {
 				return new LifeFail();
 			}
-			if (code == null) {
-				return new StateStart ();
-			} else
-				return null;
+			else
+				return new StateStart();
 		}
 		#endregion
 	}
