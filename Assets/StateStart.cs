@@ -7,7 +7,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-using NUnit.Framework; 
 using System;
 using UnityEngine;
 
