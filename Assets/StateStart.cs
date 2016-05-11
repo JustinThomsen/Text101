@@ -11,7 +11,8 @@ using NUnit.Framework;
 using System;
 using UnityEngine;
 
-namespace StateStartTest
+
+namespace Thomsen.FPMITAPrison
 {
 	public class StateStart : State
 	{
@@ -25,12 +26,15 @@ namespace StateStartTest
 		public State handleInput (KeyCode code)
 		{
 			if (code == KeyCode.E) {
-				return new InCell ();
+				return new InCell();
 			}
 			if (code == KeyCode.L) {
 				return new LifeFail();
 			}
-			return new StateStart ();
+			if (code == null) {
+				return new StateStart ();
+			} else
+				return null;
 		}
 		#endregion
 	}

@@ -9,31 +9,19 @@
 //------------------------------------------------------------------------------
 using NUnit.Framework; 
 using System;
-using UnityEngine;
 
 namespace Thomsen.FPMITAPrison
-
 {
-	public class InCell : State
+	public class HangingDead : State
 	{
 		#region State implementation
-		public String printOptions ()
+		public string printOptions ()
 		{
-			return "What would you like to do? \n\nPress \"A\" to give your meth-head cellmate all the meth. \nPress \"B\" to shank yourself and call for help.  " +
-				"\nPress \"C\" to hang yourself with your towel.";
+			throw new NotImplementedException ();
 		}
-		public State handleInput (KeyCode code)
+		public State handleInput (UnityEngine.KeyCode code)
 		{
-			if (code == KeyCode.A) {
-				return new SansMeth();
-			}
-			if (code == KeyCode.B) {
-				return new BleedingNeck();
-			}
-			if (code == KeyCode.C) {
-				return new HangingDead();
-			}
-			return null;
+			throw new NotImplementedException ();
 		}
 		#endregion
 	}

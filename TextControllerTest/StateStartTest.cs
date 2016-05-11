@@ -9,8 +9,9 @@
 //------------------------------------------------------------------------------
 using NUnit.Framework; 
 using System;
+using UnityEngine;
 
-namespace StateStartTest 
+namespace Thomsen.FPMITAPrison
 {
 	[TestFixture()]
 	public class StateStartTest
@@ -20,7 +21,7 @@ namespace StateStartTest
 		{ 
 			StateStart stateStart = new StateStart();
 
-			var state = stateStart.handleInput (UnityEngine.KeyCode.E);
+			var state = stateStart.handleInput (KeyCode.E);
 
 			Assert.IsInstanceOf<InCell> (state);
 		}
@@ -30,19 +31,30 @@ namespace StateStartTest
 		{
 			StateStart stateStart = new StateStart();
 			
-			var state = stateStart.handleInput (UnityEngine.KeyCode.L);
+			var state = stateStart.handleInput (KeyCode.L);
 			
 			Assert.IsInstanceOf<LifeFail> (state);
 		}
 
 		[Test()]
-		public void shouldTransitionToStartOnButtonPressAnyOther ()
+		public void shouldStayInStartOnButtonPressAnyOther ()
 		{
 			StateStart stateStart = new StateStart();
 			
-			var state = stateStart.handleInput (UnityEngine.KeyCode.Z);
+			var state = stateStart.handleInput (KeyCode.Z);
 			
 			Assert.IsInstanceOf<StateStart> (state);
+		}[Test()]
+		public void shouldStayInStartOnNoButtonPress()
+		{
+			StateStart stateStart = new StateStart();
+			
+			//I dont think we need to do this- we can just assert the way it is
+			//What this is saying is that the action is actually no action
+			//I cant think of how else to do this.
+			//var state = stateStart.handleInput(null);
+			
+			Assert.IsInstanceOf<StateStart> (null);
 		}
 	}
 }

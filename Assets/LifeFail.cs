@@ -10,7 +10,7 @@
 using NUnit.Framework; 
 using System;
 
-namespace StateStartTest
+namespace Thomsen.FPMITAPrison
 {
 	public class LifeFail : State
 	{
