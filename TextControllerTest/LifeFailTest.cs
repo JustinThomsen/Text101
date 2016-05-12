@@ -14,7 +14,7 @@ using UnityEngine;
 namespace Thomsen.FPMITAPrison
 {
 	[TestFixture()]
-	public class StateStartTest
+	public class LifeFailTest
 	{
 		[Test()]
 		public void shouldTransitionToInCellOnButtonPressE ()
