@@ -23,9 +23,9 @@ namespace Thomsen.FPMITAPrison
 		// Update is called once per frame
 		void Update () {
 			if (myState == States.start) {
-				state_start();
+				myState = state_start();
 			} else if (myState == States.escape) {
-				state_escape();
+				myState = state_escape();
 			} else if (myState == States.throatAgain) {
 				state_throatAgain();
 			} else if (myState == States.live) {
