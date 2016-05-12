@@ -32,7 +32,7 @@ namespace Thomsen.FPMITAPrison
 			if (code == KeyCode.C) {
 				return new HangingDead();
 			}
-			return null;
+			return new InCell();
 		}
 		#endregion
 	}
