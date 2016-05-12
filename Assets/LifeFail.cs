@@ -24,6 +24,7 @@ namespace Thomsen.FPMITAPrison
 		{
 			if (code == KeyCode.Escape) {
 				return new StateStart();
+
 			}
 			else return new LifeFail();
 		}

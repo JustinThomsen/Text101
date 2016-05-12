@@ -30,6 +30,7 @@ namespace Thomsen.FPMITAPrison
 		public void shouldStayInLifeFailOnButtonPressAnyOther ()
 		{
 			LifeFail lifeFail = new LifeFail();
+
 			
 			var state = lifeFail.handleInput (KeyCode.Escape);
 			
