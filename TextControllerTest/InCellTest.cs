@@ -45,7 +45,7 @@ namespace Thomsen.FPMITAPrison
 			Assert.IsInstanceOf<HangingDead> (state);
 		}
 		[Test()]
-		public void shouldTransitionToStateStartOnButtonPressAnyOther ()
+		public void shouldStayInCellOnButtonPressAnyOther ()
 		{
 			InCell inCell = new InCell();
 

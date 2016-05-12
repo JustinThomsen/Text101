@@ -17,31 +17,21 @@ namespace Thomsen.FPMITAPrison
 	public class LifeFailTest
 	{
 		[Test()]
-		public void shouldTransitionToInCellOnButtonPressE ()
+		public void shouldTransitionToStateStartOnButtonPressEsc ()
 		{ 
-			StateStart stateStart = new StateStart();
+			LifeFail lifeFail = new LifeFail();
 
-			var state = stateStart.handleInput (KeyCode.E);
+			var state = lifeFail.handleInput (KeyCode.Escape);
 
-			Assert.IsInstanceOf<InCell> (state);
+			Assert.IsInstanceOf<StateStart> (state);
 		}
 
 		[Test()]
-		public void shouldTransitionToLifeFailOnButtonPressL ()
+		public void shouldStayInLifeFailOnButtonPressAnyOther ()
 		{
-			StateStart stateStart = new StateStart();
+			LifeFail lifeFail = new LifeFail();
 			
-			var state = stateStart.handleInput (KeyCode.L);
-			
-			Assert.IsInstanceOf<LifeFail> (state);
-		}
-
-		[Test()]
-		public void shouldStayInStartOnButtonPressAnyOther ()
-		{
-			StateStart stateStart = new StateStart ();
-			
-			var state = stateStart.handleInput (KeyCode.Z);
+			var state = lifeFail.handleInput (KeyCode.Escape);
 			
 			Assert.IsInstanceOf<StateStart> (state);
 		}
