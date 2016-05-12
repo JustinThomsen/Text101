@@ -7,7 +7,8 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-using NUnit.Framework; 
+using NUnit.Framework;
+using UnityEngine;
 using System;
 
 namespace Thomsen.FPMITAPrison 
@@ -20,7 +21,7 @@ namespace Thomsen.FPMITAPrison
 		{ 
 			InCell inCell = new InCell();
 
-			var state = inCell.handleInput (UnityEngine.KeyCode.A);
+			var state = inCell.handleInput (KeyCode.A);
 
 			Assert.IsInstanceOf<SansMeth> (state);
 		}
@@ -30,7 +31,7 @@ namespace Thomsen.FPMITAPrison
 		{
 			InCell inCell = new InCell();
 			
-			var state = inCell.handleInput (UnityEngine.KeyCode.B);
+			var state = inCell.handleInput (KeyCode.B);
 			
 			Assert.IsInstanceOf<BleedingNeck> (state);
 		}
@@ -40,7 +41,7 @@ namespace Thomsen.FPMITAPrison
 		{
 			InCell inCell = new InCell();
 			
-			var state = inCell.handleInput (UnityEngine.KeyCode.C);
+			var state = inCell.handleInput (KeyCode.C);
 			
 			Assert.IsInstanceOf<HangingDead> (state);
 		}
@@ -49,7 +50,7 @@ namespace Thomsen.FPMITAPrison
 		{
 			InCell inCell = new InCell();
 
-			var state = inCell.handleInput (UnityEngine.KeyCode.Z);
+			var state = inCell.handleInput (KeyCode.Z);
 
 			Assert.IsInstanceOf<InCell> (state);
 		}

@@ -31,7 +31,7 @@ namespace Thomsen.FPMITAPrison
 		{
 			LifeFail lifeFail = new LifeFail();
 			
-			var state = lifeFail.handleInput (KeyCode.Escape);
+			var state = lifeFail.handleInput (KeyCode.Z);
 			
 			Assert.IsInstanceOf<StateStart> (state);
 		}

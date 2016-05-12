@@ -31,7 +31,7 @@ namespace Thomsen.FPMITAPrison
 		{
 			BleedingNeck bleedingNeck = new BleedingNeck();
 			
-			var state = bleedingNeck.handleInput (KeyCode.Escape);
+			var state = bleedingNeck.handleInput (KeyCode.Z);
 			
 			Assert.IsInstanceOf<BleedingNeck> (state);
 		}
