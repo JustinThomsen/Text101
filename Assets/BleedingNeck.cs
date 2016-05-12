@@ -17,11 +17,14 @@ namespace Thomsen.FPMITAPrison
 		#region State implementation
 		public string printOptions ()
 		{
-			throw new NotImplementedException ();
+			return "You stab yourself in the neck, throw the shank down, and call for help.  The guards come, see the bloody shank, and decide to let you die.  You die."+
+				"\n\nPress Escape to start over.";
 		}
 		public State handleInput (KeyCode code)
 		{
-			throw new NotImplementedException ();
+			if (code == KeyCode.Escape) {
+				return new StateStart();
+			} else return new BleedingNeck();
 		}
 		#endregion
 	}

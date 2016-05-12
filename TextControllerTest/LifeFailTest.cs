@@ -33,7 +33,7 @@ namespace Thomsen.FPMITAPrison
 			
 			var state = lifeFail.handleInput (KeyCode.Z);
 			
-			Assert.IsInstanceOf<StateStart> (state);
+			Assert.IsInstanceOf<LifeFail> (state);
 		}
 	/*	[Test()]
 		public void shouldStayInStartOnNoButtonPress()
