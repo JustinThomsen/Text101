@@ -8,17 +8,34 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 using NUnit.Framework;
+using UnityEngine;
 using System;
 
-namespace TextControllerTest
+namespace Thomsen.FPMITAPrison
 {
 	[TestFixture()]
 	public class StabbedInEyeTest
 	{
 		[Test()]
-		public void TestCase ()
+		public void ShouldTransitionToStateStartOnButtonPressEsc ()
 		{
+			StabbedInEye stabbedInEye = new StabbedInEye ();
+
+			var state = stabbedInEye.handleInput (KeyCode.Escape);
+
+			Assert.IsInstanceOf<StateStart> (state);
 		}
+
+		[Test()]
+		public void ShouldStayInStabbedInEyeOnAnyOtherButton ()
+		{
+			StabbedInEye stabbedInEye = new StabbedInEye ();
+			
+			var state = stabbedInEye.handleInput (KeyCode.Z);
+			
+			Assert.IsInstanceOf<StabbedInEye> (state);
+		}
+
 	}
 }
 

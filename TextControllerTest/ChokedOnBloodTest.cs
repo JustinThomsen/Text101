@@ -14,26 +14,26 @@ using UnityEngine;
 namespace Thomsen.FPMITAPrison
 {
 	[TestFixture()]
-	public class HangingDeadTest
+	public class ChokedOnBloodTest
 	{
 		[Test()]
 		public void shouldTransitionToStateStartOnButtonPressEsc ()
 		{ 
-			HangingDead hangingDead = new HangingDead();
+			ChokedOnBlood chokedOnBlood = new ChokedOnBlood();
 
-			var state = hangingDead.handleInput (KeyCode.Escape);
+			var state = chokedOnBlood.handleInput (KeyCode.Escape);
 
 			Assert.IsInstanceOf<StateStart> (state);
 		}
 
 		[Test()]
-		public void shouldStayInHangingDeadOnButtonPressAnyOther ()
+		public void shouldStayInChokedOnBloodOnButtonPressAnyOther ()
 		{
-			HangingDead hangingDead = new HangingDead ();
+			ChokedOnBlood chokedOnBlood = new ChokedOnBlood ();
 
-			var state = hangingDead.handleInput (KeyCode.Z);
+			var state = chokedOnBlood.handleInput (KeyCode.Z);
 
-			Assert.IsInstanceOf<HangingDead> (state);
+			Assert.IsInstanceOf<ChokedOnBlood> (state);
 		}
 	/*	[Test()]
 		public void shouldStayInStartOnNoButtonPress()
