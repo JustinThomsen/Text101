@@ -17,11 +17,15 @@ namespace Thomsen.FPMITAPrison
 		#region State implementation
 		public string printOptions ()
 		{
-			throw new NotImplementedException ();
+			return "As you duck down for an uppercut stab to the taint, the tweaker punches you in the face and you miss the taint but slice his femoral artery. "+
+				"You get sprayed in the face with so much blood that you start choking on the blood.  You die.\n\nPress Escape to start over.";
 		}
 		public State handleInput (KeyCode code)
 		{
-			throw new NotImplementedException ();
+			if (code == KeyCode.Escape) {
+				return new StateStart ();
+			} else
+				return new ChokedOnBlood();
 		}
 		#endregion
 	}
