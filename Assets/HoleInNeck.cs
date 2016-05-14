@@ -12,24 +12,16 @@ using System;
 
 namespace Thomsen.FPMITAPrison
 {
-	public class MethHeadBleeding : State
+	public class HoleInNeck : State
 	{
 		#region State implementation
 		public string printOptions ()
 		{
-			return "The tweaker freaks out and screams which becomes a gurgle as he bleeds profusely through the neck.  He is still struggling for the shank.  "+
-				"Do you: \n\nA) Give him the shank \nB) Stab him again \nC) Stab yourself in the throat";
+			throw new NotImplementedException ();
 		}
 		public State handleInput (KeyCode code)
 		{
-			if (code == KeyCode.A) {
-				return new SansShank();
-			} else if (code == KeyCode.B) {
-				return new StabbedInBrain();
-			} else if (code == KeyCode.C) {
-				return new HoleInNeck();
-			} else
-				return new MethHeadBleeding();
+			throw new NotImplementedException ();
 		}
 		#endregion
 	}
