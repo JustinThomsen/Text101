@@ -27,32 +27,32 @@ namespace Thomsen.FPMITAPrison
 		}
 
 		[Test()]
-		public void shouldTransitionToBleedingNeckOnButtonPressB ()
+		public void shouldTransitionToChokedOnBloodOnButtonPressB ()
 		{
-			InCell inCell = new InCell();
-			
-			var state = inCell.handleInput (KeyCode.B);
-			
-			Assert.IsInstanceOf<BleedingNeck> (state);
+			SansMeth sansMeth = new SansMeth ();
+
+			var state = sansMeth.handleInput (KeyCode.B);
+
+			Assert.IsInstanceOf<ChokedOnBlood> (state);
 		}
 
 		[Test()]
-		public void shouldTransitionToHangingDeadOnButtonPressC ()
+		public void shouldTransitionToStabbedInEyeOnButtonPressC ()
 		{
-			InCell inCell = new InCell();
+			SansMeth sansMeth = new SansMeth ();
 			
-			var state = inCell.handleInput (KeyCode.C);
+			var state = sansMeth.handleInput (KeyCode.C);
 			
-			Assert.IsInstanceOf<HangingDead> (state);
+			Assert.IsInstanceOf<StabbedInEye> (state);
 		}
 		[Test()]
-		public void shouldStayInCellOnButtonPressAnyOther ()
+		public void shouldStaySansMethOnButtonPressAnyOther ()
 		{
-			InCell inCell = new InCell();
+			SansMeth sansMeth = new SansMeth ();
 
-			var state = inCell.handleInput (KeyCode.Z);
+			var state = sansMeth.handleInput (KeyCode.Z);
 
-			Assert.IsInstanceOf<InCell> (state);
+			Assert.IsInstanceOf<SansMeth> (state);
 		}
 	}
 }

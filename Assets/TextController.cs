@@ -29,7 +29,7 @@ namespace Thomsen.FPMITAPrison
 			} else if (myState == States.throatAgain) {
 				state_throatAgain();
 			} else if (myState == States.live) {
-				state_live();
+				myState = state_live();
 			} else if (myState == States.meth) {
 				myState = state_meth();
 			} else if (myState == States.throat) {
@@ -62,12 +62,13 @@ namespace Thomsen.FPMITAPrison
 			}
 			return States.escape;
 		}
-		void state_live() {
+		States state_live() {
 			text.text = "You go through the motions, serve your prison sentence and are released on good behavior.  You are not a useful member of society anymore.  Good job breaking the law."+
 				"\n\nPress Escape to start over.";
-			if (Input.GetKeyDown (KeyCode.Escape)){
-				Start ();
-			}
+			if (Input.GetKeyDown (KeyCode.Escape)) {
+				return States.start;
+			} else
+				return States.live;
 		}
 		void state_throat() {
 			text.text = "The tweaker freaks out and screams which becomes a gurgle as he bleeds profusely through the neck.  He is still struggling for the shank.  "+

@@ -7,29 +7,21 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-using System;
 using UnityEngine;
+using System;
 
 namespace Thomsen.FPMITAPrison
 {
-	public class SansMeth : State
+	public class ChokedOnBlood : State
 	{
 		#region State implementation
 		public string printOptions ()
 		{
-			return "Your meth-head cellmate starts tweaking hardcore and tries to steal your prison shank.  Do you: \n\nA) Stab him in the throat "+
-				"\nB) Stab him in the taint \nC) Stab him in the eye";
+			throw new NotImplementedException ();
 		}
 		public State handleInput (KeyCode code)
 		{
-			if (code == KeyCode.A) {
-				return new MethHeadBleeding ();
-			} else if (code == KeyCode.B) {
-				return new ChokedOnBlood ();
-			} else if (code == KeyCode.C) {
-				return new StabbedInEye ();
-			} else
-				return new SansMeth ();
+			throw new NotImplementedException ();
 		}
 		#endregion
 	}
