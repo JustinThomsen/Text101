@@ -31,11 +31,11 @@ namespace Thomsen.FPMITAPrison
 			} else if (myState == States.live) {
 				state_live();
 			} else if (myState == States.meth) {
-				state_meth();
+				myState = state_meth();
 			} else if (myState == States.throat) {
 				state_throat();
 			} else if (myState == States.hang) {
-				state_hang();
+				myState = state_hang();
 			} else if (myState == States.stabSelf) {
 				state_stabSelf();
 			} else if (myState == States.giveShank) {
@@ -107,11 +107,12 @@ namespace Thomsen.FPMITAPrison
 				Start ();
 			}
 		}
-		void state_hang() {
+		States state_hang() {
 			text.text = "You die with a dirty towel around your neck and the tweaker steals your meth. \n\nPress Escape to start over.";
-			if (Input.GetKeyDown (KeyCode.Escape)){
-				Start ();
-			}
+			if (Input.GetKeyDown (KeyCode.Escape)) {
+				return States.start;
+			} else
+				return States.hang;
 		}
 		void state_throatAgain() {
 			text.text = "You try to stab the tweaker again and slip and fall on the knife, which stabs you in the brain.  You die. \n\nPress Escape to start over.";
@@ -133,16 +134,17 @@ namespace Thomsen.FPMITAPrison
 			else
 				return States.start;
 		}
-		void state_meth() {
+		States state_meth() {
 			text.text = "Your meth-head cellmate starts tweaking hardcore and tries to steal your prison shank.  Do you: \n\nA) Stab him in the throat "+
 				"\nB) Stab him in the taint \nC) Stab him in the eye";
-			if (Input.GetKeyDown (KeyCode.A)){
-				myState = States.throat;
-			} else if (Input.GetKeyDown (KeyCode.B)){
-				myState = States.taint;
-			} else if (Input.GetKeyDown (KeyCode.C)){
-				myState = States.eye;
-			}
+			if (Input.GetKeyDown (KeyCode.A)) {
+				return States.throat;
+			} else if (Input.GetKeyDown (KeyCode.B)) {
+				return States.taint;
+			} else if (Input.GetKeyDown (KeyCode.C)) {
+				return States.eye;
+			} else
+				return States.meth;
 		}
 		void state_stabSelf() {
 			text.text = "You die from a giant hole in your neck. \n\nPress Escape to start over.";

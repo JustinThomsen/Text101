@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 using System;
+using UnityEngine;
 
 namespace Thomsen.FPMITAPrison
 {
@@ -16,11 +17,16 @@ namespace Thomsen.FPMITAPrison
 		#region State implementation
 		public string printOptions ()
 		{
-			throw new NotImplementedException ();
+			return "You die with a dirty towel around your neck and the tweaker steals your meth. \n\nPress Escape to start over.";
 		}
-		public State handleInput (UnityEngine.KeyCode code)
+		public State handleInput (KeyCode code)
 		{
-			throw new NotImplementedException ();
+			if (code == KeyCode.Escape) {
+				return new StateStart ();
+			} else if (code == KeyCode.Z) {
+				return new HangingDead();
+			}
+			else return new HangingDead();
 		}
 		#endregion
 	}

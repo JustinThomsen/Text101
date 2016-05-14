@@ -31,7 +31,7 @@ namespace Thomsen.FPMITAPrison
 		{
 			HangingDead hangingDead = new HangingDead ();
 
-			var state = hangingDead.handleInput (KeyCode.Escape);
+			var state = hangingDead.handleInput (KeyCode.Z);
 
 			Assert.IsInstanceOf<HangingDead> (state);
 		}
