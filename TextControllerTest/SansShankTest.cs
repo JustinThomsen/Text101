@@ -14,26 +14,26 @@ using System;
 namespace Thomsen.FPMITAPrison
 {
 	[TestFixture()]
-	public class StabbedInBrainTest
+	public class SansShankTest
 	{
 		[Test()]
 		public void ShouldTransitionToStateStartOnButtonPressEsc ()
 		{
-			StabbedInBrain stabbedInBrain = new StabbedInBrain ();
+			SansShank sansShank = new SansShank ();
 
-			var state = stabbedInBrain.handleInput (KeyCode.Escape);
+			var state = sansShank.handleInput (KeyCode.Escape);
 
 			Assert.IsInstanceOf<StateStart> (state);
 		}
 
 		[Test()]
-		public void ShouldStayInStabbedInBrainOnAnyOtherButton ()
+		public void ShouldStayInSansShankOnAnyOtherButton ()
 		{
-			StabbedInBrain stabbedInBrain = new StabbedInBrain ();
+			SansShank sansShank = new SansShank ();
 			
-			var state = stabbedInBrain.handleInput (KeyCode.Z);
+			var state = sansShank.handleInput (KeyCode.Z);
 			
-			Assert.IsInstanceOf<StabbedInBrain> (state);
+			Assert.IsInstanceOf<SansShank> (state);
 		}
 
 	}
