@@ -10,6 +10,7 @@
 using NUnit.Framework; 
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Thomsen.FPMITAPrison
 {
@@ -17,13 +18,36 @@ namespace Thomsen.FPMITAPrison
 	public class TextControllerTest
 	{
 		[Test()]
-		public void shouldAcceptInput ()
+		public void shouldPassInputToState ()
+		{ 
+			//KeyCode input = KeyCode.A
+
+
+				
+				//BleedingNeck bleedingNeck = new BleedingNeck();
+				
+				//var state = bleedingNeck.handleInput (KeyCode.Escape);
+				
+				//Assert.IsInstanceOf<StateStart> (state);
+		}
+
+		[Test()]
+		public void passingCorrectInputToStateShouldReturnNewState ()
 		{ 
 			//BleedingNeck bleedingNeck = new BleedingNeck();
 
 			//var state = bleedingNeck.handleInput (KeyCode.Escape);
 
 			//Assert.IsInstanceOf<StateStart> (state);
+		}
+		[Test()]
+		public void passingIncorrectInputToStateShouldReturnSameState ()
+		{ 
+				//BleedingNeck bleedingNeck = new BleedingNeck();
+				
+				//var state = bleedingNeck.handleInput (KeyCode.Escape);
+				
+				//Assert.IsInstanceOf<StateStart> (state);
 		}
 
 		[Test()]

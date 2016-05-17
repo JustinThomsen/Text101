@@ -16,6 +16,7 @@ namespace Thomsen.FPMITAPrison
 		public Text text;
 		private enum States {stabSelf, giveShank, throatAgain, start, live, escape, meth, throat, taint, eye, hang, shankSelf};
 		private States myState;
+
 		// Use this for initialization
 		void Start () {
 			myState = States.start;
