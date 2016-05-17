@@ -14,39 +14,27 @@ using UnityEngine;
 namespace Thomsen.FPMITAPrison
 {
 	[TestFixture()]
-	public class BleedingNeckTest
+	public class TextControllerTest
 	{
 		[Test()]
-		public void shouldTransitionToStateStartOnButtonPressEsc ()
+		public void shouldAcceptInput ()
 		{ 
-			BleedingNeck bleedingNeck = new BleedingNeck();
+			//BleedingNeck bleedingNeck = new BleedingNeck();
 
-			var state = bleedingNeck.handleInput (KeyCode.Escape);
+			//var state = bleedingNeck.handleInput (KeyCode.Escape);
 
-			Assert.IsInstanceOf<StateStart> (state);
+			//Assert.IsInstanceOf<StateStart> (state);
 		}
 
 		[Test()]
-		public void shouldStayInBleedingNeckOnButtonPressAnyOther ()
-		{
-			BleedingNeck bleedingNeck = new BleedingNeck();
+		public void shouldUpdateTextOnStateChange ()
+		{ 
+			//BleedingNeck bleedingNeck = new BleedingNeck();
 			
-			var state = bleedingNeck.handleInput (KeyCode.Z);
+			//var state = bleedingNeck.handleInput (KeyCode.Escape);
 			
-			Assert.IsInstanceOf<BleedingNeck> (state);
+			//Assert.IsInstanceOf<StateStart> (state);
 		}
-	/*	[Test()]
-		public void shouldStayInStartOnNoButtonPress()
-		{
-			StateStart stateStart = new StateStart();
-			//KeyCode can't be null
-			//I dont think we need to do this- we can just assert the way it is
-			//What this is saying is that the action is actually no action
-			//I cant think of how else to do this.
-			var state = stateStart.handleInput(null);
-			
-			Assert.IsInstanceOf<StateStart> (start);
-		}*/
 	}
 }
 
