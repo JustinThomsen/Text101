@@ -15,28 +15,29 @@ namespace Thomsen.FPMITAPrison
 
 		public Text text;
 		private enum States {stabSelf, giveShank, throatAgain, start, live, escape, meth, throat, taint, eye, hang, shankSelf};
-		private States myState;
+//		private States myState;
 		private KeyCode code;
+		private char temp;
 		private State currentState;
 
 
 		// Use this for initialization
 		void Start () {
 			currentState = new StateStart ();
-			myState = States.start;
+//			myState = States.start;
 		}
 		// Update is called once per frame
 		void Update () {
-			if (myState == States.start) {
+			/*			if (myState == States.start) {
 				myState = state_start();
 			} else if (myState == States.escape) {
 				myState = state_escape();
 			} else if (myState == States.throatAgain) {
 				myState = state_throatAgain();
 			} 
-//			else if (myState == States.live) {
-//				myState = state_live();
-//			} 
+			else if (myState == States.live) {
+				myState = state_live();
+			} 
 			else if (myState == States.meth) {
 				myState = state_meth();
 			} else if (myState == States.throat) {
@@ -53,9 +54,15 @@ namespace Thomsen.FPMITAPrison
 				myState = state_eye();
 			} else if (myState == States.taint) {
 				myState = state_taint();
-			}
-			currentState = currentState.handleInput (code);
+			}*/
+
 			text.text = currentState.printOptions();
+			currentState = currentState.handleInput (code);
+
+			if (Input.inputString != ""){
+				temp = Input.inputString[0];
+				print (temp);
+			}
 
 			if (Input.GetKeyDown(KeyCode.Escape)) {
 				code = KeyCode.Escape;
@@ -68,6 +75,7 @@ namespace Thomsen.FPMITAPrison
 			}
 			if (Input.GetKeyDown(KeyCode.A)) {
 				code = KeyCode.A;
+				print("a");
 			}
 			if (Input.GetKeyDown(KeyCode.B)) {
 				code = KeyCode.B;
@@ -83,7 +91,7 @@ namespace Thomsen.FPMITAPrison
 //			} while (!Input.GetKeyDown(keyCode));
 //		}
 //
-		States state_escape() {
+/*		States state_escape() {
 			text.text = "What would you like to do? \n\nPress \"A\" to give your meth-head cellmate all the meth. \nPress \"B\" to shank yourself and call for help.  " +
 				"\nPress \"C\" to hang yourself with your towel.";
 			//yield return StartCoroutine(WaitForKeyDown(KeyCode.A));
@@ -201,6 +209,6 @@ namespace Thomsen.FPMITAPrison
 				return States.start;
 			} else
 				return States.stabSelf;
-		}
+		}*/
 	}
 }
