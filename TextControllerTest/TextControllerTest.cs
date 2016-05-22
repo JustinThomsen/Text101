@@ -18,6 +18,15 @@ namespace Thomsen.FPMITAPrison
 	public class TextControllerTest
 	{
 		[Test()]
+		public void shouldState ()
+		{ 
+			//BleedingNeck bleedingNeck = new BleedingNeck();
+			
+			//var state = bleedingNeck.handleInput (KeyCode.Escape);
+			
+			//Assert.IsInstanceOf<StateStart> (state);
+		}
+		[Test()]
 		public void shouldPassInputToState ()
 		{ 
 			//KeyCode input = KeyCode.A

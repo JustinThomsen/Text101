@@ -16,9 +16,13 @@ namespace Thomsen.FPMITAPrison
 		public Text text;
 		private enum States {stabSelf, giveShank, throatAgain, start, live, escape, meth, throat, taint, eye, hang, shankSelf};
 		private States myState;
+		private KeyCode code;
+		private State currentState;
+
 
 		// Use this for initialization
 		void Start () {
+			currentState = new StateStart ();
 			myState = States.start;
 		}
 		// Update is called once per frame
@@ -29,9 +33,11 @@ namespace Thomsen.FPMITAPrison
 				myState = state_escape();
 			} else if (myState == States.throatAgain) {
 				myState = state_throatAgain();
-			} else if (myState == States.live) {
-				myState = state_live();
-			} else if (myState == States.meth) {
+			} 
+//			else if (myState == States.live) {
+//				myState = state_live();
+//			} 
+			else if (myState == States.meth) {
 				myState = state_meth();
 			} else if (myState == States.throat) {
 				myState = state_throat();
@@ -48,10 +54,39 @@ namespace Thomsen.FPMITAPrison
 			} else if (myState == States.taint) {
 				myState = state_taint();
 			}
+			currentState = currentState.handleInput (code);
+			text.text = currentState.printOptions();
+
+			if (Input.GetKeyDown(KeyCode.Escape)) {
+				code = KeyCode.Escape;
+			}
+			if (Input.GetKeyDown(KeyCode.L)) {
+				code = KeyCode.L;
+			}
+			if (Input.GetKeyDown(KeyCode.E)) {
+				code = KeyCode.E;
+			}
+			if (Input.GetKeyDown(KeyCode.A)) {
+				code = KeyCode.A;
+			}
+			if (Input.GetKeyDown(KeyCode.B)) {
+				code = KeyCode.B;
+			}
+			if (Input.GetKeyDown(KeyCode.C)) {
+				code = KeyCode.C;
+			}
 		}
+
+//		IEnumerator WaitForKeyDown(KeyCode keyCode){
+//			do {
+//				yield return null;
+//			} while (!Input.GetKeyDown(keyCode));
+//		}
+//
 		States state_escape() {
 			text.text = "What would you like to do? \n\nPress \"A\" to give your meth-head cellmate all the meth. \nPress \"B\" to shank yourself and call for help.  " +
 				"\nPress \"C\" to hang yourself with your towel.";
+			//yield return StartCoroutine(WaitForKeyDown(KeyCode.A));
 			if (Input.GetKeyDown (KeyCode.A)){
 				return States.meth;
 			}
@@ -64,8 +99,14 @@ namespace Thomsen.FPMITAPrison
 			return States.escape;
 		}
 		States state_live() {
-			text.text = "You go through the motions, serve your prison sentence and are released on good behavior.  You are not a useful member of society anymore.  Good job breaking the law."+
-				"\n\nPress Escape to start over.";
+//
+//			LifeFail lifeFail = new LifeFail ();
+//
+//			text.text = lifeFail.printOptions();
+//
+//			return lifeFail.handleInput (code);
+
+//			if (Input.GetKeyDown (lifeFail.handleInput(KeyCode.Escape)))
 			if (Input.GetKeyDown (KeyCode.Escape)) {
 				return States.start;
 			} else
