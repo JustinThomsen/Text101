@@ -17,28 +17,56 @@ namespace Thomsen.FPMITAPrison
 		private enum States {stabSelf, giveShank, throatAgain, start, live, escape, meth, throat, taint, eye, hang, shankSelf};
 //		private States myState;
 		private KeyCode code;
-		private char temp;
+		private KeyCode emptyCode;
 		private State currentState;
 
 
-		// Use this for initialization
 		void Start () {
 			currentState = new StateStart ();
 //			myState = States.start;
 		}
-		// Update is called once per frame
+
 		void Update () {
-			/*			if (myState == States.start) {
+
+			text.text = currentState.printOptions();
+			currentState = currentState.handleInput (code);
+			code = KeyCode.JoystickButton0;
+
+			if (Input.GetKeyDown(KeyCode.Escape)) {
+				code = KeyCode.Escape;
+			}
+			if (Input.GetKeyDown(KeyCode.L)) {
+				code = KeyCode.L;
+			}
+			if (Input.GetKeyDown(KeyCode.E)) {
+				code = KeyCode.E;
+			}
+			if (Input.GetKeyDown(KeyCode.A)) {
+				code = KeyCode.A;
+			}
+			if (Input.GetKeyDown(KeyCode.B)) {
+				code = KeyCode.B;
+			}
+			if (Input.GetKeyDown(KeyCode.C)) {
+				code = KeyCode.C;
+			}
+
+			/*
+			 * 
+			if (Input.inputString != ""){
+				temp = Input.inputString[0];
+				print (temp);
+			}
+
+			if (myState == States.start) {
 				myState = state_start();
 			} else if (myState == States.escape) {
 				myState = state_escape();
 			} else if (myState == States.throatAgain) {
 				myState = state_throatAgain();
-			} 
-			else if (myState == States.live) {
+			} else if (myState == States.live) {
 				myState = state_live();
-			} 
-			else if (myState == States.meth) {
+			} else if (myState == States.meth) {
 				myState = state_meth();
 			} else if (myState == States.throat) {
 				myState = state_throat();
@@ -55,46 +83,12 @@ namespace Thomsen.FPMITAPrison
 			} else if (myState == States.taint) {
 				myState = state_taint();
 			}*/
-
-			text.text = currentState.printOptions();
-			currentState = currentState.handleInput (code);
-
-			if (Input.inputString != ""){
-				temp = Input.inputString[0];
-				print (temp);
-			}
-
-			if (Input.GetKeyDown(KeyCode.Escape)) {
-				code = KeyCode.Escape;
-			}
-			if (Input.GetKeyDown(KeyCode.L)) {
-				code = KeyCode.L;
-			}
-			if (Input.GetKeyDown(KeyCode.E)) {
-				code = KeyCode.E;
-			}
-			if (Input.GetKeyDown(KeyCode.A)) {
-				code = KeyCode.A;
-				print("a");
-			}
-			if (Input.GetKeyDown(KeyCode.B)) {
-				code = KeyCode.B;
-			}
-			if (Input.GetKeyDown(KeyCode.C)) {
-				code = KeyCode.C;
-			}
 		}
 
-//		IEnumerator WaitForKeyDown(KeyCode keyCode){
-//			do {
-//				yield return null;
-//			} while (!Input.GetKeyDown(keyCode));
-//		}
-//
 /*		States state_escape() {
 			text.text = "What would you like to do? \n\nPress \"A\" to give your meth-head cellmate all the meth. \nPress \"B\" to shank yourself and call for help.  " +
 				"\nPress \"C\" to hang yourself with your towel.";
-			//yield return StartCoroutine(WaitForKeyDown(KeyCode.A));
+
 			if (Input.GetKeyDown (KeyCode.A)){
 				return States.meth;
 			}
@@ -106,15 +100,16 @@ namespace Thomsen.FPMITAPrison
 			}
 			return States.escape;
 		}
-		States state_live() {
-//
-//			LifeFail lifeFail = new LifeFail ();
-//
-//			text.text = lifeFail.printOptions();
-//
-//			return lifeFail.handleInput (code);
 
-//			if (Input.GetKeyDown (lifeFail.handleInput(KeyCode.Escape)))
+		States state_live() {
+
+			LifeFail lifeFail = new LifeFail ();
+
+			text.text = lifeFail.printOptions();
+
+			return lifeFail.handleInput (code);
+
+			if (Input.GetKeyDown (lifeFail.handleInput(KeyCode.Escape)))
 			if (Input.GetKeyDown (KeyCode.Escape)) {
 				return States.start;
 			} else

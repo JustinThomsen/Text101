@@ -18,36 +18,13 @@ namespace Thomsen.FPMITAPrison
 	public class TextControllerTest
 	{
 		[Test()]
-		public void shouldState ()
-		{ 
-			//BleedingNeck bleedingNeck = new BleedingNeck();
-			
-			//var state = bleedingNeck.handleInput (KeyCode.Escape);
-			
-			//Assert.IsInstanceOf<StateStart> (state);
-		}
-		[Test()]
-		public void shouldPassInputToState ()
-		{ 
-			//KeyCode input = KeyCode.A
-
-
-				
-				//BleedingNeck bleedingNeck = new BleedingNeck();
-				
-				//var state = bleedingNeck.handleInput (KeyCode.Escape);
-				
-				//Assert.IsInstanceOf<StateStart> (state);
-		}
-
-		[Test()]
 		public void passingCorrectInputToStateShouldReturnNewState ()
-		{ 
-			//BleedingNeck bleedingNeck = new BleedingNeck();
-
-			//var state = bleedingNeck.handleInput (KeyCode.Escape);
-
-			//Assert.IsInstanceOf<StateStart> (state);
+		{ //Do we need to test this?  The logic for returning states is already tested in each class.
+//			InCell inCell = new InCell();
+//
+//			var state = 
+//
+//			Assert.IsInstanceOf<InCell> (state);
 		}
 		[Test()]
 		public void passingIncorrectInputToStateShouldReturnSameState ()
