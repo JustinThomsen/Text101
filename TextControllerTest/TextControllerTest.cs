@@ -39,11 +39,11 @@ namespace Thomsen.FPMITAPrison
 		[Test()]
 		public void shouldUpdateTextOnStateChange ()
 		{ 
-			//BleedingNeck bleedingNeck = new BleedingNeck();
-			
-			//var state = bleedingNeck.handleInput (KeyCode.Escape);
-			
-			//Assert.IsInstanceOf<StateStart> (state);
+//			BleedingNeck bleedingNeck = new BleedingNeck();
+//			
+//			var state = bleedingNeck.printOptions();
+//			
+//			Assert.AreSame(text.text, state);
 		}
 	}
 }
