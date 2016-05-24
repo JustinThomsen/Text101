@@ -30,7 +30,7 @@ namespace Thomsen.FPMITAPrison
 
 			text.text = currentState.printOptions();
 			currentState = currentState.handleInput (code);
-			code = KeyCode.JoystickButton0;
+			code = emptyCode;
 
 			if (Input.GetKeyDown(KeyCode.Escape)) {
 				code = KeyCode.Escape;
