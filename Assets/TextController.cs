@@ -14,7 +14,6 @@ namespace Thomsen.FPMITAPrison
 	public class TextController : MonoBehaviour {
 
 		public Text text;
-		private enum States {stabSelf, giveShank, throatAgain, start, live, escape, meth, throat, taint, eye, hang, shankSelf};
 		private KeyCode code;
 		private KeyCode emptyCode;
 		private State currentState;
