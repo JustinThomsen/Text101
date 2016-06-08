@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AnalysisConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonarsource.com/msbuild/integration/2015/1">
+  <SonarConfigDir>C:\Users\Justin\Documents\GitHub\UnityGames\Text101WithTests\.sonarqube\conf</SonarConfigDir>
+  <SonarOutputDir>C:\Users\Justin\Documents\GitHub\UnityGames\Text101WithTests\.sonarqube\out</SonarOutputDir>
+  <SonarBinDir>C:\Users\Justin\Documents\GitHub\UnityGames\Text101WithTests\.sonarqube\bin</SonarBinDir>
+  <SonarRunnerWorkingDirectory>C:\Users\Justin\Documents\GitHub\UnityGames\Text101WithTests</SonarRunnerWorkingDirectory>
+  <SonarQubeHostUrl>http://localhost:9000</SonarQubeHostUrl>
+  <SonarProjectKey>Text101</SonarProjectKey>
+  <SonarProjectVersion>v1.0</SonarProjectVersion>
+  <SonarProjectName>Text101WithTests</SonarProjectName>
+  <AdditionalConfig>
+    <ConfigSetting Id="BuildUri" />
+    <ConfigSetting Id="TfsUri" />
+    <ConfigSetting Id="settings.file.path" Value="C:\Users\Justin\Downloads\sonarqube-5.5\bin\SonarQube.Analysis.xml" />
+  </AdditionalConfig>
+  <ServerSettings>
+    <Property Name="sonar.core.id">20160523193101</Property>
+    <Property Name="sonar.core.version">5.5</Property>
+    <Property Name="sonar.core.startTime">5/23/2016 7:31:01 PM</Property>
+    <Property Name="sonar.qualitygate">1</Property>
+    <Property Name="sonar.permission.template.default">default_template</Property>
+    <Property Name="sonar.cs.msbuild.testProjectPattern">[^\\]*test[^\\]*$</Property>
+  </ServerSettings>
+  <LocalSettings />
+  <AnalyzerSettings>
+    <RuleSetFilePath>C:\Users\Justin\Documents\GitHub\UnityGames\Text101WithTests\.sonarqube\conf\SonarQubeRoslyn-cs.ruleset</RuleSetFilePath>
+    <AnalyzerAssemblyPaths>
+      <Path>C:\Users\Justin\AppData\Local\Temp\.sonarqube\.static\csharp_1.10.0\SonarAnalyzer.zip\SonarAnalyzer.CSharp.dll</Path>
+      <Path>C:\Users\Justin\AppData\Local\Temp\.sonarqube\.static\csharp_1.10.0\SonarAnalyzer.zip\SonarAnalyzer.dll</Path>
+      <Path>C:\Users\Justin\AppData\Local\Temp\.sonarqube\.static\csharp_1.10.0\SonarAnalyzer.zip\SonarAnalyzer.zip</Path>
+    </AnalyzerAssemblyPaths>
+    <AdditionalFilePaths>
+      <Path>C:\Users\Justin\Documents\GitHub\UnityGames\Text101WithTests\.sonarqube\conf\SonarLint.xml</Path>
+    </AdditionalFilePaths>
+  </AnalyzerSettings>
+</AnalysisConfig>
